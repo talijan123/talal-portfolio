@@ -1,57 +1,26 @@
-import { useState } from "react";
-import { Link } from "react-scroll";
-import { navigation } from "../../data/navigation";
+import Logo from "./Logo";
+import NavLinks from "./NavLinks";
+import ResumeButton from "./ResumeButton";
+import ThemeToggle from "./ThemeToggle";
+import MobileMenu from "./MobileMenu";
 
 export default function Navbar() {
-    const [menuOpen, setMenuOpen] = useState(false);
+  return (
+    <nav className="sticky top-0 z-50 bg-slate-900/70 backdrop-blur-md border-b border-white/10 shadow-lg">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-    return (
-        <nav className="sticky top-0 z-50 bg-slate-900/70 backdrop-blur-md border-b border-white/10 shadow-lg text-white px-8 py-4">
+        <Logo />
 
-            <div className="flex justify-between items-center">
+        <NavLinks />
 
-                <h1 className="text-2xl font-bold">
-                    Talal.
-                </h1>
+        <div className="hidden lg:flex items-center gap-4">
+          <ResumeButton />
+          <ThemeToggle />
+        </div>
 
-                {/* Desktop Menu */}
+        <MobileMenu />
 
-                <ul className="hidden lg:flex gap-6">
-
-                    {navigation.map((item) => (
-
-                        <Link
-                            key={item.to}
-                            to={item.to}
-                            smooth
-                            duration={500}
-                            className="cursor-pointer hover:text-blue-400 transition"
-                        >
-                            {item.title}
-                        </Link>
-
-                    ))}
-
-                </ul>
-
-                {/* Mobile Button */}
-                <button
-                    className="lg:hidden text-3xl"
-                    onClick={() => setMenuOpen(!menuOpen)}
-                >
-                    {menuOpen ? "✕" : "☰"}
-                </button>
-
-            </div>
-            {menuOpen && (
-                <ul className="lg:hidden mt-4 flex flex-col gap-4">
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Skills</li>
-                    <li>Projects</li>
-                    <li>Contact</li>
-                </ul>
-            )}
-        </nav>
-    );
+      </div>
+    </nav>
+  );
 }
