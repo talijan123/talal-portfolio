@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-scroll";
+import { navigation } from "../../data/navigation";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -13,12 +15,23 @@ export default function Navbar() {
                 </h1>
 
                 {/* Desktop Menu */}
+
                 <ul className="hidden lg:flex gap-6">
-                    <li className="hover:text-blue-400 cursor-pointer">Home</li>
-                    <li className="hover:text-blue-400 cursor-pointer">About</li>
-                    <li className="hover:text-blue-400 cursor-pointer">Skills</li>
-                    <li className="hover:text-blue-400 cursor-pointer">Projects</li>
-                    <li className="hover:text-blue-400 cursor-pointer">Contact</li>
+
+                    {navigation.map((item) => (
+
+                        <Link
+                            key={item.to}
+                            to={item.to}
+                            smooth
+                            duration={500}
+                            className="cursor-pointer hover:text-blue-400 transition"
+                        >
+                            {item.title}
+                        </Link>
+
+                    ))}
+
                 </ul>
 
                 {/* Mobile Button */}
