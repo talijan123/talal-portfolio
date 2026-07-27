@@ -1,37 +1,38 @@
+import portfolio from "../assets/images/projects/portfolio.png";
+import bytereviewer from "../assets/images/projects/bytereviewer.png";
+import aiSaas from "../assets/images/projects/ai-saas.png";
+import amazon from "../assets/images/projects/amazon.png";
+
 export const projects = [
   {
     id: 1,
-
-    title: "AI Image SaaS",
+    title: "Personal Portfolio",
 
     description:
-      "A modern AI image generation web application built with React, Tailwind CSS, Supabase, Clerk Authentication and AI APIs.",
+      "A modern developer portfolio showcasing my skills, projects and experience using React and Tailwind CSS.",
 
-    image: "/projects/ai-saas.jpg",
+    image: portfolio,
 
     technologies: [
       "React",
       "Tailwind",
-      "Supabase",
-      "Clerk",
+      "Framer Motion",
+      "Vite",
     ],
 
     github: "#",
 
     demo: "#",
-
-    featured: true,
   },
 
   {
     id: 2,
-
-    title: "WordPress Tech Blog",
+    title: "ByteReviewer",
 
     description:
-      "A responsive SEO-focused technology blog built with WordPress and Elementor.",
+      "Technology blog focused on AI, Cloud Computing, DevOps and Web Development.",
 
-    image: "/projects/blog.jpg",
+    image: bytereviewer,
 
     technologies: [
       "WordPress",
@@ -42,30 +43,47 @@ export const projects = [
     github: "#",
 
     demo: "https://www.bytereviewer.com",
-
-    featured: true,
   },
 
   {
     id: 3,
-
-    title: "Amazon Product Research",
+    title: "AI Image SaaS",
 
     description:
-      "Amazon product research dashboard using Helium 10, Keepa and Google Sheets.",
+      "AI powered image generation platform built with modern React architecture.",
 
-    image: "/projects/amazon.jpg",
+    image: aiSaas,
 
     technologies: [
-      "Amazon",
-      "Helium 10",
-      "Keepa",
+      "React",
+      "Supabase",
+      "Clerk",
+      "Tailwind",
     ],
 
     github: "#",
 
     demo: "#",
+  },
 
-    featured: true,
+  {
+    id: 4,
+    title: "Amazon Product Research",
+
+    description:
+      "Amazon product research workflow using Helium 10, Keepa and Google Sheets.",
+
+    image: amazon,
+
+    technologies: [
+      "Helium 10",
+      "Keepa",
+      "Google Sheets",
+      "Amazon",
+    ],
+
+    github: "#",
+
+    demo: "#",
   },
 ];
