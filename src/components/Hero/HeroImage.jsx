@@ -37,6 +37,7 @@ export default function HeroImage() {
           <img
             src={profile.image}
             alt={profile.name}
+            loading="eager"
             className="w-full h-full object-cover"
           />
         </div>

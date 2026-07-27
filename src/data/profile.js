@@ -3,7 +3,17 @@ import profileImage from "../assets/images/profile.png";
 export const profile = {
   name: "Talal Hassan",
 
-  role: "Front-End Developer",
+  title: "Front-End Developer",
+
+  roles: [
+    "Front-End Developer",
+    "React Developer",
+    "WordPress Developer",
+    "Amazon Research Specialist",
+  ],
+
+  description:
+    "Passionate Front-End Developer focused on building fast, responsive, and user-friendly web applications using React, JavaScript, WordPress, and modern web technologies.",
 
   image: profileImage,
 
