@@ -1,17 +1,13 @@
-import portfolio from "../assets/images/projects/portfolio.png";
-import bytereviewer from "../assets/images/projects/bytereviewer.png";
-import aiSaas from "../assets/images/projects/ai-saas.png";
-import amazon from "../assets/images/projects/amazon.png";
+import placeholder from "../assets/images/projects/placeholder.png";
 
 export const projects = [
   {
     id: 1,
     title: "Personal Portfolio",
-
     description:
-      "A modern developer portfolio showcasing my skills, projects and experience using React and Tailwind CSS.",
+      "A modern developer portfolio built with React, Tailwind CSS, Framer Motion, and reusable components.",
 
-    image: portfolio,
+    image: placeholder,
 
     technologies: [
       "React",
@@ -21,18 +17,16 @@ export const projects = [
     ],
 
     github: "#",
-
     demo: "#",
   },
 
   {
     id: 2,
     title: "ByteReviewer",
-
     description:
-      "Technology blog focused on AI, Cloud Computing, DevOps and Web Development.",
+      "A professional WordPress technology blog focused on AI, Cloud Computing, DevOps, and software reviews.",
 
-    image: bytereviewer,
+    image: placeholder,
 
     technologies: [
       "WordPress",
@@ -41,18 +35,16 @@ export const projects = [
     ],
 
     github: "#",
-
     demo: "https://www.bytereviewer.com",
   },
 
   {
     id: 3,
     title: "AI Image SaaS",
-
     description:
-      "AI powered image generation platform built with modern React architecture.",
+      "An AI-powered image generation platform using React, Supabase, and Clerk authentication.",
 
-    image: aiSaas,
+    image: placeholder,
 
     technologies: [
       "React",
@@ -62,18 +54,16 @@ export const projects = [
     ],
 
     github: "#",
-
     demo: "#",
   },
 
   {
     id: 4,
     title: "Amazon Product Research",
-
     description:
-      "Amazon product research workflow using Helium 10, Keepa and Google Sheets.",
+      "Amazon product research workflow using Helium 10, Keepa, and Google Sheets.",
 
-    image: amazon,
+    image: placeholder,
 
     technologies: [
       "Helium 10",
@@ -83,7 +73,6 @@ export const projects = [
     ],
 
     github: "#",
-
     demo: "#",
   },
 ];
