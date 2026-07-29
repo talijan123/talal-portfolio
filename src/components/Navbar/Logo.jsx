@@ -1,17 +1,61 @@
+import { Link } from "react-scroll";
+import logo from "../../assets/logo.png";
+
 export default function Logo() {
   return (
-    <a
-      href="#home"
+    <Link
+      to="home"
+      smooth={true}
+      duration={500}
+      spy={true}
+      offset={-80}
       className="
-        text-3xl
-        font-black
-        tracking-wide
-        text-white
-        transition
-        hover:text-blue-400
+        flex
+        items-center
+        gap-3
+        cursor-pointer
+        select-none
       "
     >
-      Talal<span className="text-blue-500">.</span>
-    </a>
+      {/* Logo */}
+      <img
+        src={logo}
+        alt="Talal Hassan Logo"
+        className="
+          w-12
+          h-12
+          object-contain
+          transition-transform
+          duration-300
+          hover:scale-110
+        "
+      />
+
+      {/* Name */}
+      <div className="leading-tight">
+        <h1
+          className="
+            text-xl
+            font-black
+            text-white
+            tracking-wide
+          "
+        >
+          Talal
+          <span className="text-blue-500">.</span>
+        </h1>
+
+        <p
+          className="
+            text-xs
+            uppercase
+            tracking-[3px]
+            text-slate-400
+          "
+        >
+          Front-End Developer
+        </p>
+      </div>
+    </Link>
   );
 }
