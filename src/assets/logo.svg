@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 520 170"
+     fill="none">
+
+    <!-- Left Bracket -->
+    <path
+        d="M65 35 L20 85 L65 135"
+        stroke="#3B82F6"
+        stroke-width="18"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+    <!-- Right Slash -->
+    <path
+        d="M390 145 L435 25"
+        stroke="#3B82F6"
+        stroke-width="18"
+        stroke-linecap="round"/>
+
+    <!-- Right Bracket -->
+    <path
+        d="M455 35 L500 85 L455 135"
+        stroke="#3B82F6"
+        stroke-width="18"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+    <!-- TH -->
+    <text
+        x="135"
+        y="116"
+        fill="#FFFFFF"
+        font-family="Inter, Poppins, Arial, sans-serif"
+        font-size="92"
+        font-weight="900"
+        letter-spacing="-6">
+        TH
+    </text>
+
+</svg>
