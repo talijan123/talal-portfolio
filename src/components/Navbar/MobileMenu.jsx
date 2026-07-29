@@ -3,7 +3,7 @@ import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import { Link } from "react-scroll";
 import { AnimatePresence, motion } from "framer-motion";
 
-import ResumeButton from "./ResumeButton";
+import ResumeButton from "./ResumeButtonTemp.jsx";
 import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [

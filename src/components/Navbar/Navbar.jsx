@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Logo from "./Logo";
 import NavLinks from "./NavLinks";
-import ResumeButton from "./ResumeButton";
+import ResumeButton from "./ResumeButtonTemp.jsx";
 import ThemeToggle from "./ThemeToggle";
 import MobileMenu from "./MobileMenu";
 
