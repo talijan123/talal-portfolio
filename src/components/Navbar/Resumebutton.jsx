@@ -1,17 +1,28 @@
+import MagneticButton from "../UI/MagneticButton";
+
 export default function ResumeButton() {
   return (
-    <button
-      className="
-        border
-        border-blue-500
-        px-5
-        py-2
-        rounded-full
-        hover:bg-blue-500
-        transition
-      "
-    >
-      Download CV
-    </button>
+    <MagneticButton>
+      <a
+        href="/resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="
+          inline-flex
+          items-center
+          justify-center
+          px-5
+          py-2.5
+          rounded-xl
+          bg-blue-600
+          hover:bg-blue-700
+          transition-all
+          duration-300
+          font-semibold
+        "
+      >
+        Resume
+      </a>
+    </MagneticButton>
   );
 }

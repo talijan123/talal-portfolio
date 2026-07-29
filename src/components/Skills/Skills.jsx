@@ -1,6 +1,6 @@
 import Container from "../UI/Container";
+import SectionTitle from "../UI/SectionTitle";
 import SkillCard from "./SkillCard";
-
 import { skills } from "../../data/skills";
 
 export default function Skills() {
@@ -10,20 +10,12 @@ export default function Skills() {
       className="py-28 bg-slate-950 text-white"
     >
       <Container>
-        <div className="text-center">
-          <p className="text-blue-500 uppercase tracking-widest font-semibold">
-            Skills
-          </p>
 
-          <h2 className="text-5xl font-black mt-4">
-            Technologies I Use
-          </h2>
-
-          <p className="mt-6 text-slate-400 max-w-2xl mx-auto">
-            These are the technologies and tools I use to build
-            modern, responsive, and scalable web applications.
-          </p>
-        </div>
+        <SectionTitle
+          badge="Skills"
+          title="Technologies I Use"
+          subtitle="These are the technologies and tools I use to build modern, responsive and scalable web applications."
+        />
 
         <div
           className="
@@ -42,6 +34,7 @@ export default function Skills() {
             />
           ))}
         </div>
+
       </Container>
     </section>
   );

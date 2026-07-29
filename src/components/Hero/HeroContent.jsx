@@ -1,36 +1,83 @@
-import { profile } from "../../data/profile";
 import { motion } from "framer-motion";
+import { profile } from "../../data/profile";
 import { fadeLeft } from "../../animations/fade";
+
+import TypingText from "./TypingText";
 import HeroButtons from "./HeroButtons";
 import SocialLinks from "./SocialLinks";
-import TypingText from "./TypingText";
+import TechStack from "./TechStack";
 
 export default function HeroContent() {
-    return (
-        <motion.div
-            className="flex-1 max-w-2xl"
-            variants={fadeLeft}
-            initial="hidden"
-            animate="visible"
-            custom={0.2}
-        >
-            <p className="text-blue-500 font-semibold uppercase tracking-widest">
-                👋 Hello, I'm
-            </p>
+  return (
+    <motion.div
+      variants={fadeLeft}
+      initial="hidden"
+      animate="visible"
+      custom={0.2}
+      className="flex-1 max-w-2xl"
+    >
+      {/* Status Badge */}
+      <motion.div
+        initial={{ opacity: 0, y: -15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+        className="
+          inline-flex
+          items-center
+          gap-2
+          rounded-full
+          border
+          border-blue-500/20
+          bg-blue-500/10
+          px-4
+          py-2
+        "
+      >
+        <span className="h-2 w-2 rounded-full bg-blue-500 animate-pulse"></span>
 
-            <h1 className="mt-4 text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
-                {profile.name}
-            </h1>
+        <span className="text-sm font-medium text-blue-400">
+          Open to Work
+        </span>
+      </motion.div>
 
-            <TypingText />
+      {/* Greeting */}
+      <p className="mt-8 text-blue-400 font-bold uppercase tracking-[6px]">
+        Welcome to My Portfolio
+      </p>
 
-            <p className="mt-8 text-slate-400 text-lg leading-8">
-                {profile.description}
-            </p>
+      {/* Name */}
+      <h1 className="mt-5 text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-none">
+        {profile.name.split(" ")[0]}
+        <span className="block text-white">
+          {profile.name.split(" ")[1]}
+        </span>
+      </h1>
 
-            <HeroButtons />
+      {/* Animated Profession */}
+      <div className="mt-6">
+        <TypingText />
+      </div>
 
-            <SocialLinks />
-        </motion.div>
-    );
+      {/* Description */}
+      <p className="mt-8 max-w-xl text-lg leading-8 text-slate-400">
+        {profile.description}
+      </p>
+
+      {/* Buttons */}
+      <div className="mt-10">
+        <HeroButtons />
+      </div>
+
+      {/* Social Links */}
+      <div className="mt-10">
+        <SocialLinks />
+      </div>
+
+      {/* Tech Stack */}
+      <div className="mt-10">
+        <TechStack />
+      </div>
+
+    </motion.div>
+  );
 }

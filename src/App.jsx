@@ -1,22 +1,63 @@
+import { useEffect, useState } from "react";
+import { AnimatePresence } from "framer-motion";
+
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
+import Stats from "./components/Stats/Stats";
 import About from "./components/About/About";
 import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contacts/Contacts";
+import Footer from "./components/Footer/Footer";
+import Loader from "./components/Loader/Loader";
+import CustomCursor from "./components/UI/CustomCursor";
+import ScrollProgress from "./components/UI/ScrollProgress";
+import ScrollToTop from "./components/UI/ScrollToTop";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1800);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
-      <Navbar />
+      <AnimatePresence mode="wait">
+        {loading && <Loader />}
+      </AnimatePresence>
 
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-      </main>
+      {!loading && (
+        <>
+          <CustomCursor />
+
+          {/* Scroll Progress Bar */}
+          <ScrollProgress />
+
+          {/* Navbar */}
+          <Navbar />
+
+          {/* Main Content */}
+          <main className="relative z-10">
+            <Hero />
+            <Stats />
+            <About />
+            <Skills />
+            <Projects />
+            <Contact />
+          </main>
+
+          {/* Footer */}
+          <Footer />
+
+          {/* Floating Scroll To Top Button */}
+          <ScrollToTop />
+        </>
+      )}
     </>
   );
 }

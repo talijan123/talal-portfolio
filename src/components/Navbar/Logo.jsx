@@ -1,8 +1,15 @@
 export default function Logo() {
   return (
     <a
-      href="/"
-      className="text-2xl font-bold tracking-wide text-white"
+      href="#home"
+      className="
+        text-3xl
+        font-black
+        tracking-wide
+        text-white
+        transition
+        hover:text-blue-400
+      "
     >
       Talal<span className="text-blue-500">.</span>
     </a>
