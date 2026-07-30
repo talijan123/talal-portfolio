@@ -1,4 +1,5 @@
 import placeholder from "../assets/images/projects/placeholder.png";
+import Bytereviwer from"../assets/images/projects/Bytereviwer.png"
 
 export const projects = [
   {
@@ -26,7 +27,7 @@ export const projects = [
     description:
       "A professional WordPress technology blog focused on AI, Cloud Computing, DevOps, and software reviews.",
 
-    image: placeholder,
+    image: Bytereviwer,
 
     technologies: [
       "WordPress",
