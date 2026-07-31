@@ -1,5 +1,6 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { HiPaperAirplane } from "react-icons/hi2";
 
 export default function ContactForm() {
   const [form, setForm] = useState({
@@ -60,97 +61,216 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-6"
+      className="
+        rounded-3xl
+
+        bg-white
+        dark:bg-slate-900/70
+
+        border
+        border-slate-200
+        dark:border-slate-700
+
+        backdrop-blur-xl
+
+        p-8
+
+        shadow-lg
+        shadow-slate-200/50
+        dark:shadow-none
+
+        transition-all
+        duration-300
+      "
     >
-      <input
-        type="text"
-        name="from_name"
-        value={form.from_name}
-        onChange={handleChange}
-        placeholder="Your Name"
-        className="
-          w-full
-          p-4
-          rounded-xl
-          bg-slate-900
-          border
-          border-slate-700
-          outline-none
-          focus:border-blue-500
-          transition
-        "
-      />
+      <div className="space-y-6">
 
-      <input
-        type="email"
-        name="from_email"
-        value={form.from_email}
-        onChange={handleChange}
-        placeholder="Your Email"
-        className="
-          w-full
-          p-4
-          rounded-xl
-          bg-slate-900
-          border
-          border-slate-700
-          outline-none
-          focus:border-blue-500
-          transition
-        "
-      />
+        {/* Name */}
 
-      <textarea
-        rows="6"
-        name="message"
-        value={form.message}
-        onChange={handleChange}
-        placeholder="Your Message"
-        className="
-          w-full
-          p-4
-          rounded-xl
-          bg-slate-900
-          border
-          border-slate-700
-          outline-none
-          focus:border-blue-500
-          resize-none
-          transition
-        "
-      />
+        <input
+          type="text"
+          name="from_name"
+          value={form.from_name}
+          onChange={handleChange}
+          placeholder="Your Name"
+          className="
+            w-full
 
-      <button
-        type="submit"
-        disabled={loading}
-        className="
-          w-full
-          bg-blue-600
-          hover:bg-blue-700
-          disabled:bg-slate-700
-          disabled:cursor-not-allowed
-          transition-all
-          duration-300
-          px-8
-          py-4
-          rounded-xl
-          font-semibold
-        "
-      >
-        {loading ? "Sending..." : "Send Message"}
-      </button>
+            rounded-xl
 
-      {status && (
-        <p
-          className={`text-center font-medium ${
-            status.startsWith("✅")
-              ? "text-green-400"
-              : "text-red-400"
-          }`}
+            border
+            border-slate-300
+            dark:border-slate-700
+
+            bg-slate-100
+            dark:bg-slate-800
+
+            px-5
+            py-4
+
+            text-slate-900
+            dark:text-white
+
+            placeholder:text-slate-500
+
+            outline-none
+
+            transition-all
+            duration-300
+
+            focus:border-blue-500
+            focus:ring-4
+            focus:ring-blue-500/20
+          "
+        />
+
+        {/* Email */}
+
+        <input
+          type="email"
+          name="from_email"
+          value={form.from_email}
+          onChange={handleChange}
+          placeholder="Your Email"
+          className="
+            w-full
+
+            rounded-xl
+
+            border
+            border-slate-300
+            dark:border-slate-700
+
+            bg-slate-100
+            dark:bg-slate-800
+
+            px-5
+            py-4
+
+            text-slate-900
+            dark:text-white
+
+            placeholder:text-slate-500
+
+            outline-none
+
+            transition-all
+            duration-300
+
+            focus:border-blue-500
+            focus:ring-4
+            focus:ring-blue-500/20
+          "
+        />
+
+        {/* Message */}
+
+        <textarea
+          rows="6"
+          name="message"
+          value={form.message}
+          onChange={handleChange}
+          placeholder="Write your message..."
+          className="
+            w-full
+
+            rounded-xl
+
+            border
+            border-slate-300
+            dark:border-slate-700
+
+            bg-slate-100
+            dark:bg-slate-800
+
+            px-5
+            py-4
+
+            text-slate-900
+            dark:text-white
+
+            placeholder:text-slate-500
+
+            outline-none
+
+            resize-none
+
+            transition-all
+            duration-300
+
+            focus:border-blue-500
+            focus:ring-4
+            focus:ring-blue-500/20
+          "
+        />
+
+        {/* Button */}
+
+        <button
+          type="submit"
+          disabled={loading}
+          className="
+            group
+
+            flex
+            items-center
+            justify-center
+            gap-3
+
+            w-full
+
+            rounded-xl
+
+            bg-blue-600
+
+            px-6
+            py-4
+
+            font-semibold
+            text-white
+
+            transition-all
+            duration-300
+
+            hover:bg-blue-700
+            hover:shadow-lg
+            hover:shadow-blue-500/30
+
+            disabled:bg-slate-500
+            disabled:cursor-not-allowed
+          "
         >
-          {status}
-        </p>
-      )}
+          {loading ? "Sending..." : "Send Message"}
+
+          {!loading && (
+            <HiPaperAirplane
+              size={20}
+              className="
+                transition-transform
+                duration-300
+
+                group-hover:translate-x-1
+                group-hover:-translate-y-1
+              "
+            />
+          )}
+        </button>
+
+        {/* Status */}
+
+        {status && (
+          <p
+            className={`text-center font-medium ${
+              status.startsWith("✅")
+                ? "text-green-500"
+                : "text-red-500"
+            }`}
+          >
+            {status}
+          </p>
+        )}
+
+      </div>
     </form>
   );
 }

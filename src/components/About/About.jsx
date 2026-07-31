@@ -9,32 +9,53 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-28 bg-slate-900 text-white"
+      className="
+        py-28
+
+        bg-white
+        dark:bg-slate-900
+
+        text-slate-900
+        dark:text-white
+
+        transition-colors
+        duration-300
+      "
     >
       <Container>
 
         <SectionTitle
-          badge="About"
+          badge="About Me"
           title="Get To Know Me Better"
-          subtitle="I'm passionate about building modern, responsive and user-friendly websites using React, JavaScript, WordPress and the latest web technologies."
+          subtitle="I'm passionate about building modern, responsive and user-friendly web applications using React, JavaScript, Tailwind CSS, WordPress and modern development tools."
         />
 
         <div
           className="
+            mt-20
+
             flex
             flex-col
             lg:flex-row
+
             items-center
+
             gap-16
+            lg:gap-24
           "
         >
           <AboutImage />
+
           <AboutContent />
         </div>
 
-        <Stats />
+        <div className="mt-24">
+          <Stats />
+        </div>
 
-        <Timeline />
+        <div className="mt-24">
+          <Timeline />
+        </div>
 
       </Container>
     </section>

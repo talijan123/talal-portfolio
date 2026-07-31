@@ -16,7 +16,6 @@ export default function HeroContent() {
       custom={0.2}
       className="flex-1 max-w-2xl"
     >
-      {/* Status Badge */}
       <motion.div
         initial={{ opacity: 0, y: -15 }}
         animate={{ opacity: 1, y: 0 }}
@@ -35,49 +34,76 @@ export default function HeroContent() {
       >
         <span className="h-2 w-2 rounded-full bg-blue-500 animate-pulse"></span>
 
-        <span className="text-sm font-medium text-blue-400">
-          Open to Work
+        <span className="text-sm font-medium text-blue-500">
+          Available for Front-End Opportunities
         </span>
       </motion.div>
 
-      {/* Greeting */}
-      <p className="mt-8 text-blue-400 font-bold uppercase tracking-[6px]">
-        Welcome to My Portfolio
+      <p
+        className="
+          mt-8
+          font-bold
+          uppercase
+          tracking-[6px]
+          text-blue-500
+        "
+      >
+        Hello, I'm
       </p>
 
-      {/* Name */}
       <h1 className="mt-5 text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-none">
-        {profile.name.split(" ")[0]}
-        <span className="block text-white">
+        <span className="text-slate-900 dark:text-white transition-colors duration-300">
+          {profile.name.split(" ")[0]}
+        </span>
+
+        <span className="block text-blue-500">
           {profile.name.split(" ")[1]}
         </span>
       </h1>
 
-      {/* Animated Profession */}
       <div className="mt-6">
         <TypingText />
       </div>
 
-      {/* Description */}
-      <p className="mt-8 max-w-xl text-lg leading-8 text-slate-400">
+      <p
+        className="
+          mt-4
+          text-sm
+          uppercase
+          tracking-[3px]
+          text-slate-500
+          dark:text-slate-400
+        "
+      >
+        React • JavaScript • Tailwind CSS • Node.js
+      </p>
+
+      <p
+        className="
+          mt-8
+          max-w-xl
+          text-lg
+          leading-8
+          text-slate-600
+          dark:text-slate-400
+          transition-colors
+          duration-300
+        "
+      >
         {profile.description}
       </p>
 
-      {/* Buttons */}
       <div className="mt-10">
         <HeroButtons />
       </div>
 
-      {/* Social Links */}
       <div className="mt-10">
         <SocialLinks />
       </div>
 
-      {/* Tech Stack */}
       <div className="mt-10">
         <TechStack />
       </div>
-
     </motion.div>
   );
 }

@@ -1,12 +1,15 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { HiX, HiExternalLink, HiCode } from "react-icons/hi";
+import {
+  HiX,
+  HiExternalLink,
+  HiCode,
+} from "react-icons/hi";
 
 export default function ProjectModal({
   project,
   isOpen,
   onClose,
 }) {
-  // Prevent rendering when no project is selected
   if (!project) return null;
 
   return (
@@ -14,47 +17,59 @@ export default function ProjectModal({
       {isOpen && (
         <motion.div
           onClick={onClose}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
           className="
             fixed
             inset-0
             z-[100]
-            bg-black/80
+            bg-black/70
             backdrop-blur-md
             flex
             items-center
             justify-center
-            p-6
+            p-5
           "
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
         >
           <motion.div
             onClick={(e) => e.stopPropagation()}
             initial={{
-              scale: 0.9,
               opacity: 0,
+              scale: 0.95,
+              y: 40,
             }}
             animate={{
-              scale: 1,
               opacity: 1,
+              scale: 1,
+              y: 0,
             }}
             exit={{
-              scale: 0.9,
               opacity: 0,
+              scale: 0.95,
+              y: 40,
             }}
             transition={{
-              duration: 0.3,
+              duration: .3,
             }}
             className="
               relative
-              max-w-4xl
+
               w-full
-              bg-slate-900
+              max-w-5xl
+
+              max-h-[90vh]
+              overflow-y-auto
+
               rounded-3xl
-              overflow-hidden
+
+              bg-white
+              dark:bg-slate-900
+
               border
-              border-slate-700
+              border-slate-200
+              dark:border-slate-700
+
               shadow-2xl
             "
           >
@@ -66,42 +81,73 @@ export default function ProjectModal({
                 absolute
                 top-5
                 right-5
-                z-10
+
+                z-20
+
                 w-11
                 h-11
+
                 rounded-full
-                bg-slate-800
-                hover:bg-red-500
-                transition
+
+                bg-white
+                dark:bg-slate-800
+
+                border
+                border-slate-200
+                dark:border-slate-700
+
                 flex
                 items-center
                 justify-center
+
+                transition-all
+                duration-300
+
+                hover:bg-red-500
+                hover:text-white
               "
             >
-              <HiX className="text-white" size={22} />
+              <HiX size={22} />
             </button>
 
-            {/* Project Image */}
+            {/* Image */}
 
             <img
               src={project.image}
               alt={project.title}
               className="
                 w-full
-                h-72
+                h-80
                 object-cover
               "
             />
 
             {/* Content */}
 
-            <div className="p-8">
+            <div className="p-8 lg:p-10">
 
-              <h2 className="text-4xl font-black text-white">
+              <h2
+                className="
+                  text-4xl
+                  font-black
+
+                  text-slate-900
+                  dark:text-white
+                "
+              >
                 {project.title}
               </h2>
 
-              <p className="mt-5 text-slate-400 leading-8">
+              <p
+                className="
+                  mt-6
+
+                  leading-8
+
+                  text-slate-600
+                  dark:text-slate-400
+                "
+              >
                 {project.description}
               </p>
 
@@ -110,20 +156,41 @@ export default function ProjectModal({
               <div className="mt-8 flex flex-wrap gap-3">
 
                 {project.technologies.map((item) => (
+
                   <span
                     key={item}
                     className="
+                      inline-flex
+                      items-center
+                      gap-2
+
+                      rounded-full
+
                       px-4
                       py-2
-                      rounded-full
-                      bg-blue-500/10
-                      text-blue-400
+
+                      bg-blue-50
+                      dark:bg-slate-800
+
                       border
-                      border-blue-500/20
+                      border-blue-100
+                      dark:border-slate-700
+
+                      text-slate-700
+                      dark:text-slate-300
+
+                      transition
+
+                      hover:border-blue-500
+                      hover:text-blue-500
                     "
                   >
+                    <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+
                     {item}
+
                   </span>
+
                 ))}
 
               </div>
@@ -137,19 +204,31 @@ export default function ProjectModal({
                   target="_blank"
                   rel="noreferrer"
                   className="
-                    flex
+                    inline-flex
                     items-center
                     gap-2
+
+                    rounded-xl
+
                     px-6
                     py-3
-                    rounded-xl
+
                     bg-blue-600
+                    text-white
+
+                    font-semibold
+
+                    transition-all
+                    duration-300
+
                     hover:bg-blue-700
-                    transition
+                    hover:-translate-y-1
                   "
                 >
                   <HiExternalLink />
+
                   Live Demo
+
                 </a>
 
                 <a
@@ -157,26 +236,47 @@ export default function ProjectModal({
                   target="_blank"
                   rel="noreferrer"
                   className="
-                    flex
+                    inline-flex
                     items-center
                     gap-2
+
+                    rounded-xl
+
                     px-6
                     py-3
-                    rounded-xl
+
+                    bg-white
+                    dark:bg-slate-900
+
+                    text-slate-800
+                    dark:text-white
+
                     border
-                    border-slate-700
+                    border-slate-300
+                    dark:border-slate-700
+
+                    font-semibold
+
+                    transition-all
+                    duration-300
+
                     hover:border-blue-500
-                    transition
+                    hover:text-blue-500
+                    hover:-translate-y-1
                   "
                 >
                   <HiCode />
-                  GitHub
+
+                  Source Code
+
                 </a>
 
               </div>
 
             </div>
+
           </motion.div>
+
         </motion.div>
       )}
     </AnimatePresence>

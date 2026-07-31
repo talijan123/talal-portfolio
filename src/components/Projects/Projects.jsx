@@ -19,7 +19,17 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="py-28 bg-slate-950 text-white"
+      className="
+    py-28
+    bg-slate-50
+    dark:bg-slate-950
+
+    text-slate-900
+    dark:text-white
+
+    transition-colors
+    duration-300
+  "
     >
       <Container>
 

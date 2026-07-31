@@ -3,13 +3,23 @@ import StatCard from "./StatCard";
 
 export default function Stats() {
   return (
-    <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-6">
-      {stats.map((stat) => (
-        <StatCard
-          key={stat.label}
-          {...stat}
-        />
-      ))}
-    </div>
+    <section className="mt-24">
+      <div
+        className="
+          grid
+          grid-cols-2
+          lg:grid-cols-4
+          gap-6
+        "
+      >
+        {stats.map((stat, index) => (
+          <StatCard
+            key={stat.label}
+            {...stat}
+            delay={index * 0.1}
+          />
+        ))}
+      </div>
+    </section>
   );
 }

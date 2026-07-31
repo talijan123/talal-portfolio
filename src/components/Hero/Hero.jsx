@@ -11,8 +11,12 @@ export default function Hero() {
         relative
         min-h-screen
         overflow-hidden
-        bg-slate-950
-        text-white
+        bg-white
+        dark:bg-slate-950
+        text-slate-900
+        dark:text-white
+        transition-colors
+        duration-300
       "
     >
       <AuroraBackground />

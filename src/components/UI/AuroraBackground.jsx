@@ -5,7 +5,6 @@ export default function AuroraBackground() {
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
       {/* Blue */}
-
       <motion.div
         animate={{
           x: [0, 120, 0],
@@ -21,16 +20,18 @@ export default function AuroraBackground() {
           absolute
           top-20
           left-10
-          w-[500px]
-          h-[500px]
+          w-[520px]
+          h-[520px]
           rounded-full
-          bg-blue-500/20
-          blur-[140px]
+          bg-blue-500/15
+          dark:bg-blue-500/20
+          blur-[150px]
+          transition-all
+          duration-500
         "
       />
 
       {/* Purple */}
-
       <motion.div
         animate={{
           x: [0, -120, 0],
@@ -46,16 +47,18 @@ export default function AuroraBackground() {
           absolute
           top-40
           right-10
-          w-[450px]
-          h-[450px]
+          w-[470px]
+          h-[470px]
           rounded-full
-          bg-purple-500/20
+          bg-sky-400/15
+          dark:bg-purple-500/20
           blur-[150px]
+          transition-all
+          duration-500
         "
       />
 
       {/* Cyan */}
-
       <motion.div
         animate={{
           x: [0, 80, 0],
@@ -71,13 +74,43 @@ export default function AuroraBackground() {
           absolute
           bottom-10
           left-1/3
-          w-[420px]
-          h-[420px]
+          w-[430px]
+          h-[430px]
           rounded-full
-          bg-cyan-500/15
-          blur-[130px]
+          bg-cyan-300/15
+          dark:bg-cyan-500/15
+          blur-[140px]
+          transition-all
+          duration-500
         "
       />
+
+      {/* White Glow (Light Mode Only) */}
+      <motion.div
+        animate={{
+          scale: [1, 1.15, 1],
+          opacity: [0.4, 0.7, 0.4],
+        }}
+        transition={{
+          duration: 14,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="
+          absolute
+          left-1/2
+          top-1/2
+          -translate-x-1/2
+          -translate-y-1/2
+          w-[650px]
+          h-[650px]
+          rounded-full
+          bg-white/40
+          dark:hidden
+          blur-[180px]
+        "
+      />
+
     </div>
   );
 }

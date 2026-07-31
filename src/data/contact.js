@@ -10,8 +10,8 @@ export const contact = [
     id: 1,
     icon: FaEnvelope,
     title: "Email",
-    value: "talal@example.com",
-    link: "mailto:talal@example.com",
+    value: "talalhassan965@gmail.com",
+    link: "mailto:talalhassan965@gmail.com",
   },
 
   {
@@ -26,8 +26,8 @@ export const contact = [
     id: 3,
     icon: FaLinkedin,
     title: "LinkedIn",
-    value: "linkedin.com/in/your-profile",
-    link: "#",
+    value: "linkedin.com/in/talal-undefined-85a63831a",
+    link: "https://linkedin.com/in/talal-undefined-85a63831a/",
   },
 
   {

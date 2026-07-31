@@ -11,7 +11,6 @@ export default function HeroImage() {
       animate="visible"
       custom={0.4}
     >
-      {/* Floating Animation */}
       <motion.div
         animate={{
           y: [0, -15, 0],
@@ -31,6 +30,7 @@ export default function HeroImage() {
             scale-110
             rounded-full
             bg-blue-500/20
+            dark:bg-blue-500/20
             blur-[80px]
           "
         />
@@ -47,7 +47,7 @@ export default function HeroImage() {
           "
         />
 
-        {/* Main Image Container */}
+        {/* Main Image */}
         <motion.div
           whileHover={{
             scale: 1.03,
@@ -63,14 +63,19 @@ export default function HeroImage() {
             lg:w-[430px]
             lg:h-[430px]
             rounded-full
-            bg-slate-900
+            bg-white
+            dark:bg-slate-900
             p-3
             border
-            border-white/10
+            border-slate-200
+            dark:border-white/10
             shadow-2xl
-            shadow-blue-500/20
+            shadow-slate-300/40
+            dark:shadow-blue-500/20
             overflow-hidden
             z-10
+            transition-all
+            duration-300
           "
         >
           <div className="w-full h-full rounded-full overflow-hidden">
@@ -104,22 +109,26 @@ export default function HeroImage() {
             absolute
             -top-3
             -right-6
-            bg-slate-900/90
+            bg-white/90
+            dark:bg-slate-900/90
             backdrop-blur-md
             border
-            border-slate-700
+            border-slate-200
+            dark:border-slate-700
             rounded-2xl
             px-5
             py-3
             shadow-xl
+            transition-all
+            duration-300
             z-20
           "
         >
-          <p className="text-blue-400 font-bold text-lg">
+          <p className="text-blue-500 font-bold text-lg">
             2+
           </p>
 
-          <p className="text-xs text-slate-400 whitespace-nowrap">
+          <p className="text-xs text-slate-600 dark:text-slate-400 whitespace-nowrap">
             Years Learning
           </p>
         </motion.div>
@@ -138,22 +147,26 @@ export default function HeroImage() {
             absolute
             -bottom-5
             -left-8
-            bg-slate-900/90
+            bg-white/90
+            dark:bg-slate-900/90
             backdrop-blur-md
             border
-            border-slate-700
+            border-slate-200
+            dark:border-slate-700
             rounded-2xl
             px-5
             py-3
             shadow-xl
+            transition-all
+            duration-300
             z-20
           "
         >
-          <p className="text-sm font-semibold text-white">
+          <p className="text-sm font-semibold text-slate-900 dark:text-white">
             React ⚛️
           </p>
 
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-slate-600 dark:text-slate-400">
             Tailwind CSS
           </p>
         </motion.div>

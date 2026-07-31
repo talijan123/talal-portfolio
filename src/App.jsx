@@ -1,3 +1,4 @@
+import SEO from "./components/SEO/SEO";
 import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 
@@ -27,6 +28,14 @@ function App() {
 
   return (
     <>
+      {/* SEO */}
+      <SEO
+        title="Talal Hassan | Front-End Developer | React Portfolio"
+        description="Talal Hassan is a Front-End Developer from Pakistan specializing in React, JavaScript, Tailwind CSS, WordPress, and responsive web applications. Explore my portfolio, projects, skills, and contact information."
+        keywords="Talal Hassan, Front-End Developer, React Developer, JavaScript, Tailwind CSS, WordPress Developer, Portfolio, Web Developer, Pakistan"
+        image="/preview.png"
+        url="https://your-domain.vercel.app"
+      />
       <AnimatePresence mode="wait">
         {loading && <Loader />}
       </AnimatePresence>

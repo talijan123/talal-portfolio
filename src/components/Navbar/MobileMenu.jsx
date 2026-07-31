@@ -24,9 +24,30 @@ export default function MobileMenu() {
       {/* Hamburger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="text-white text-3xl"
+        aria-label="Toggle Mobile Menu"
+        className="
+          flex
+          items-center
+          justify-center
+          w-11
+          h-11
+          rounded-full
+
+          text-slate-900
+          dark:text-white
+
+          hover:bg-slate-200
+          dark:hover:bg-slate-800
+
+          transition-all
+          duration-300
+        "
       >
-        {isOpen ? <HiOutlineX /> : <HiOutlineMenu />}
+        {isOpen ? (
+          <HiOutlineX size={28} />
+        ) : (
+          <HiOutlineMenu size={28} />
+        )}
       </button>
 
       {/* Mobile Menu */}
@@ -42,13 +63,21 @@ export default function MobileMenu() {
               top-16
               right-0
               w-72
-              bg-slate-900/95
-              backdrop-blur-xl
-              border
-              border-slate-800
+
               rounded-2xl
-              shadow-2xl
               overflow-hidden
+
+              backdrop-blur-xl
+
+              bg-white/95
+              dark:bg-slate-900/95
+
+              border
+              border-slate-200
+              dark:border-slate-800
+
+              shadow-2xl
+
               z-50
             "
           >
@@ -57,8 +86,8 @@ export default function MobileMenu() {
                 <Link
                   key={link.to}
                   to={link.to}
-                  spy={true}
-                  smooth={true}
+                  spy
+                  smooth
                   duration={500}
                   offset={-80}
                   activeClass="!text-blue-500"
@@ -66,20 +95,42 @@ export default function MobileMenu() {
                   className="
                     px-6
                     py-4
+
                     cursor-pointer
-                    text-slate-300
                     font-medium
+
+                    text-slate-700
+                    dark:text-slate-300
+
+                    hover:bg-slate-100
+                    dark:hover:bg-slate-800
+
+                    hover:text-blue-500
+
                     transition-all
                     duration-300
-                    hover:bg-slate-800
-                    hover:text-blue-500
                   "
                 >
                   {link.name}
                 </Link>
               ))}
 
-              <div className="border-t border-slate-800 mt-3 pt-5 px-6 flex items-center justify-between">
+              {/* Bottom Actions */}
+              <div
+                className="
+                  mt-3
+                  pt-5
+                  px-6
+
+                  flex
+                  items-center
+                  justify-between
+
+                  border-t
+                  border-slate-200
+                  dark:border-slate-800
+                "
+              >
                 <ResumeButton />
                 <ThemeToggle />
               </div>

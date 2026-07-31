@@ -6,8 +6,6 @@ export default function HeroButtons() {
   return (
     <div className="mt-10 flex flex-col sm:flex-row items-center gap-5">
 
-      {/* Hire Me */}
-
       <MagneticButton strength={20}>
         <Link
           to="contact"
@@ -31,11 +29,12 @@ export default function HeroButtons() {
             shadow-blue-600/30
             transition-all
             duration-300
+            hover:-translate-y-1
             hover:bg-blue-700
             hover:shadow-blue-500/50
           "
         >
-          Hire Me
+          Let's Work Together
 
           <HiArrowRight
             size={20}
@@ -47,8 +46,6 @@ export default function HeroButtons() {
           />
         </Link>
       </MagneticButton>
-
-      {/* Download Resume */}
 
       <MagneticButton strength={20}>
         <a
@@ -62,19 +59,24 @@ export default function HeroButtons() {
             gap-3
             rounded-xl
             border
-            border-slate-700
-            bg-slate-900
+            border-slate-300
+            dark:border-slate-700
+            bg-white
+            dark:bg-slate-900
             px-7
             py-4
             font-semibold
-            text-white
+            text-slate-900
+            dark:text-white
             transition-all
             duration-300
+            hover:-translate-y-1
             hover:border-blue-500
-            hover:bg-slate-800
+            hover:bg-slate-100
+            dark:hover:bg-slate-800
           "
         >
-          Download CV
+          Download Resume
 
           <HiDownload
             size={20}

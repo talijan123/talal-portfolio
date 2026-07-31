@@ -47,23 +47,40 @@ export default function SocialLinks() {
             aria-label={social.label}
             className="
               group
+
               flex
               h-14
               w-14
+
               items-center
               justify-center
+
               rounded-full
+
               border
-              border-slate-700
-              bg-slate-900
-              text-slate-400
-              shadow-lg
+              border-slate-300
+              dark:border-slate-700
+
+              bg-white
+              dark:bg-slate-900
+
+              text-slate-700
+              dark:text-slate-400
+
+              shadow-md
+              dark:shadow-lg
+
               transition-all
               duration-300
+
               hover:-translate-y-2
+              hover:scale-105
+
               hover:border-blue-500
-              hover:bg-blue-500/10
-              hover:text-blue-400
+              hover:bg-blue-500
+              hover:text-white
+
+              hover:shadow-xl
               hover:shadow-blue-500/30
             "
           >
@@ -73,6 +90,7 @@ export default function SocialLinks() {
                 transition-transform
                 duration-300
                 group-hover:scale-110
+                group-hover:rotate-6
               "
             />
           </a>

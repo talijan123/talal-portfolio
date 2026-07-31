@@ -9,7 +9,7 @@ export const projects = [
     description:
       "A modern developer portfolio built with React, Tailwind CSS, Framer Motion, and reusable components.",
 
-    image: placeholder,
+    image: Portfolio,
 
     technologies: [
       "React",

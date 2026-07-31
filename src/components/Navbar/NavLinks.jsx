@@ -23,7 +23,8 @@ export default function NavLinks() {
           className="
             relative
             cursor-pointer
-            text-slate-300
+            text-slate-700
+            dark:text-slate-300
             font-medium
             transition-all
             duration-300

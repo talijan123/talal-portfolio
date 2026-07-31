@@ -16,10 +16,7 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
 
     return () =>
-      window.removeEventListener(
-        "scroll",
-        handleScroll
-      );
+      window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -30,9 +27,10 @@ export default function Navbar() {
         z-50
         transition-all
         duration-300
-        ${scrolled
-          ? "py-4 bg-slate-900/90 backdrop-blur-xl shadow-lg border-b border-slate-800"
-          : "py-4 bg-slate-950/80 backdrop-blur-md"
+        ${
+          scrolled
+            ? "py-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl shadow-lg border-b border-slate-200 dark:border-slate-800"
+            : "py-4 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md"
         }
       `}
     >
