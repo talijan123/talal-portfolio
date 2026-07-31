@@ -1,4 +1,5 @@
 import SEO from "./components/SEO/SEO";
+import { Analytics } from "@vercel/analytics/react"
 import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 
@@ -36,6 +37,9 @@ function App() {
         image="/preview.png"
         url="https://your-domain.vercel.app"
       />
+      {/* Vercel Analytics */}
+      <Analytics />
+
       <AnimatePresence mode="wait">
         {loading && <Loader />}
       </AnimatePresence>
