@@ -35,7 +35,7 @@ function App() {
         description="Talal Hassan is a Front-End Developer from Pakistan specializing in React, JavaScript, Tailwind CSS, WordPress, and responsive web applications. Explore my portfolio, projects, skills, and contact information."
         keywords="Talal Hassan, Front-End Developer, React Developer, JavaScript, Tailwind CSS, WordPress Developer, Portfolio, Web Developer, Pakistan"
         image="/preview.png"
-        url="https://your-domain.vercel.app"
+        url="https://talal-hassan-portfolio.vercel.app"
       />
       {/* Vercel Analytics */}
       <Analytics />
