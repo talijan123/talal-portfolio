@@ -1,3 +1,4 @@
+import StructuredData from "./components/SEO/StructuredData";
 import SEO from "./components/SEO/SEO";
 import { Analytics } from "@vercel/analytics/react"
 import { useEffect, useState } from "react";
@@ -37,6 +38,7 @@ function App() {
         image="/preview.png"
         url="https://talal-hassan-portfolio.vercel.app"
       />
+      <StructuredData />
       {/* Vercel Analytics */}
       <Analytics />
 

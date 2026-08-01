@@ -5,12 +5,13 @@ export default function SEO({
   description,
   keywords,
   image = "/preview.png",
-  url = "https://your-domain.vercel.app",
+  url = "https://talal-hassan-portfolio.vercel.app",
 }) {
   const fullTitle = `${title} | Talal Hassan`;
 
   return (
     <Helmet>
+      {/* Primary SEO */}
       <title>{fullTitle}</title>
 
       <meta
@@ -38,6 +39,12 @@ export default function SEO({
         content="#2563eb"
       />
 
+      {/* Google Search Console Verification */}
+      <meta
+        name="google-site-verification"
+        content="15lW_aFAZ2hBtpTRtztdGVVstr1Y2Qp9kdVTnGExJl0"
+      />
+
       <link
         rel="canonical"
         href={url}
@@ -54,9 +61,15 @@ export default function SEO({
         content={description}
       />
 
-      <meta property="og:image" content={image} />
+      <meta
+        property="og:image"
+        content={image}
+      />
 
-      <meta property="og:url" content={url} />
+      <meta
+        property="og:url"
+        content={url}
+      />
 
       {/* Twitter */}
 
