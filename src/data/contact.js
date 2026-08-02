@@ -27,7 +27,7 @@ export const contact = [
     icon: FaLinkedin,
     title: "LinkedIn",
     value: "linkedin.com/in/talal-undefined-85a63831a",
-    link: "https://linkedin.com/in/talal-undefined-85a63831a/",
+    link: "https://www.linkedin.com/in/talijan/",
   },
 
   {
@@ -35,6 +35,6 @@ export const contact = [
     icon: FaMapMarkerAlt,
     title: "Location",
     value: "Abbottabad, Pakistan",
-    link: "#",
+    link: "https://maps.google.com/?q=Abbottabad,Pakistan",
   },
 ];

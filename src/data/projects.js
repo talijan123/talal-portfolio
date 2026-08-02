@@ -1,6 +1,6 @@
-import placeholder from "../assets/images/projects/placeholder.png";
-import Bytereviwer from"../assets/images/projects/Bytereviwer.png"
-import Portfolio from"../assets/images/projects/Portfolio.png"
+import placeholder from "../assets/images/projects/placeholder.webp";
+import Bytereviwer from"../assets/images/projects/Bytereviwer.webp"
+import Portfolio from"../assets/images/projects/Portfolio.webp"
 
 export const projects = [
   {

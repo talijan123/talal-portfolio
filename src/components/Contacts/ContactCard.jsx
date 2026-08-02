@@ -7,65 +7,44 @@ export default function ContactCard({
 }) {
   const Icon = item.icon;
 
-  return (
-    <motion.a
-      href={item.link}
-      target="_blank"
-      rel="noreferrer"
-      initial={{
-        opacity: 0,
-        x: -30,
-      }}
-      whileInView={{
-        opacity: 1,
-        x: 0,
-      }}
-      viewport={{ once: true }}
-      transition={{
-        duration: 0.45,
-        delay,
-      }}
-      whileHover={{
-        y: -6,
-        scale: 1.02,
-      }}
-      className="
-        group
+  const cardClass = `
+    group
 
-        relative
-        overflow-hidden
+    relative
+    overflow-hidden
 
-        flex
-        items-center
-        justify-between
+    flex
+    items-center
+    justify-between
 
-        rounded-3xl
+    rounded-3xl
 
-        bg-white
-        dark:bg-slate-900/70
+    bg-white
+    dark:bg-slate-900/70
 
-        border
-        border-slate-200
-        dark:border-slate-700
+    border
+    border-slate-200
+    dark:border-slate-700
 
-        backdrop-blur-xl
+    backdrop-blur-xl
 
-        p-6
+    p-6
 
-        shadow-lg
-        shadow-slate-200/50
-        dark:shadow-none
+    shadow-lg
+    shadow-slate-200/50
+    dark:shadow-none
 
-        transition-all
-        duration-300
+    transition-all
+    duration-300
 
-        hover:border-blue-500
-        hover:shadow-xl
-        hover:shadow-blue-500/15
-      "
-    >
+    hover:border-blue-500
+    hover:shadow-xl
+    hover:shadow-blue-500/15
+  `;
+
+  const content = (
+    <>
       {/* Background Glow */}
-
       <div
         className="
           absolute
@@ -91,9 +70,7 @@ export default function ContactCard({
       />
 
       <div className="relative z-10 flex items-center gap-5">
-
         {/* Icon */}
-
         <div
           className="
             flex
@@ -116,7 +93,6 @@ export default function ContactCard({
         </div>
 
         {/* Text */}
-
         <div>
           <h3
             className="
@@ -143,28 +119,71 @@ export default function ContactCard({
             {item.value}
           </p>
         </div>
-
       </div>
 
       {/* Arrow */}
+      {item.link && (
+        <div
+          className="
+            relative
+            z-10
 
-      <div
-        className="
-          relative
-          z-10
+            text-slate-400
 
-          text-slate-400
+            transition-all
+            duration-300
 
-          transition-all
-          duration-300
+            group-hover:text-blue-500
+            group-hover:translate-x-1
+          "
+        >
+          <HiArrowUpRight size={22} />
+        </div>
+      )}
+    </>
+  );
 
-          group-hover:text-blue-500
-          group-hover:translate-x-1
-        "
+  if (item.link) {
+    return (
+      <motion.a
+        href={item.link}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={item.title}
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{
+          duration: 0.45,
+          delay,
+        }}
+        whileHover={{
+          y: -6,
+          scale: 1.02,
+        }}
+        className={cardClass}
       >
-        <HiArrowUpRight size={22} />
-      </div>
+        {content}
+      </motion.a>
+    );
+  }
 
-    </motion.a>
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: -30 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{
+        duration: 0.45,
+        delay,
+      }}
+      whileHover={{
+        y: -6,
+        scale: 1.02,
+      }}
+      className={cardClass}
+    >
+      {content}
+    </motion.div>
   );
 }

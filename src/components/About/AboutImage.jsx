@@ -82,6 +82,8 @@ export default function AboutImage() {
           <img
             src={profile.image}
             alt={profile.name}
+            loading="lazy"
+            decoding="async"
             className="
               w-80
               lg:w-[360px]
